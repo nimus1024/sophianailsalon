@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophia's Nail Salon – Atlanta, GA</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal: #3aada8;
+  --teal-dark: #247d79;
+  --teal-mid: #2a9490;
+  --teal-light: #edf7f7;
+  --cream: #fdf9f4;
+  --warm-white: #fffdf9;
+  --text: #2c2c2c;
+  --gray: #666;
+  --light-gray: #f5f5f5;
+  --border: #e0e0e0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--text);
+  background: var(--warm-white);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ─── NAVIGATION ─── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255,253,249,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 72px;
+}
+
+.nav-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--teal-dark);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition: color 0.25s;
+}
+
+.nav-links a:hover { color: var(--teal-dark); }
+
+.nav-cta {
+  background: var(--teal);
+  color: white !important;
+  padding: 0.55rem 1.4rem;
+  border-radius: 2px;
+  letter-spacing: 0.12em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--teal-dark) !important; color: white !important; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 92vh;
+  background: var(--teal-dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 4rem 6rem 6rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-pretitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(4rem, 7vw, 6.5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+.hero-details {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 2;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.hero-details strong {
+  color: rgba(255,255,255,0.95);
+  font-weight: 400;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  background: white;
+  color: var(--teal-dark);
+  padding: 0.85rem 2.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.25s;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  border: 1.5px solid rgba(255,255,255,0.5);
+  color: white;
+  padding: 0.85rem 2.2rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.25s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+.hero-right {
+  position: relative;
+  background: var(--teal-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-right-inner {
+  text-align: center;
+  color: rgba(255,255,255,0.15);
+  padding: 3rem;
+}
+
+.hero-big-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 12rem;
+  line-height: 1;
+  color: rgba(255,255,255,0.07);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-badges {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-badge {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1.25rem 2.5rem;
+  border-radius: 2px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  min-width: 220px;
+}
+
+.badge-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-top: 0.4rem;
+  font-weight: 400;
+}
+
+/* ─── RIBBON ─── */
+.ribbon {
+  background: var(--teal);
+  color: white;
+  padding: 0.9rem 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.ribbon-item {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+.ribbon-dot { color: rgba(255,255,255,0.4); margin: 0 0.5rem; }
+
+/* ─── SECTION BASE ─── */
+.section { padding: 6rem 3rem; }
+.section-inner { max-width: 1080px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--teal-dark);
+}
+
+.section-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--teal);
+  margin: 1.25rem 0 2rem;
+}
+
+.section-sub {
+  font-size: 0.95rem;
+  color: var(--gray);
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+/* ─── SERVICES ─── */
+.services { background: var(--cream); }
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.services-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.svc-tab {
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--border);
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gray);
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+
+.svc-tab:hover { color: var(--teal-dark); border-left-color: var(--teal); }
+
+.svc-tab.active {
+  color: var(--teal-dark);
+  font-weight: 700;
+  border-left-color: var(--teal);
+  background: white;
+}
+
+.svc-panel { display: none; }
+.svc-panel.active { display: block; }
+
+.svc-panel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 1rem;
+}
+
+.price-row:last-child { border-bottom: none; }
+
+.price-name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.price-note {
+  font-size: 0.78rem;
+  color: var(--gray);
+  font-weight: 300;
+  margin-top: 0.2rem;
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--teal-dark);
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.price-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 1rem;
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+.price-cols span { text-align: right; color: var(--teal-dark); font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+
+/* ─── ABOUT ─── */
+.about { background: var(--warm-white); }
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-body {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.about-body p + p { margin-top: 1rem; }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.stat {
+  border-top: 2px solid var(--teal);
+  padding-top: 1rem;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: var(--teal-dark);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 0.4rem;
+  font-weight: 400;
+}
+
+.about-visual {
+  background: var(--teal-light);
+  border-radius: 2px;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--teal-dark);
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.about-quote-attr {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+}
+
+.about-perks {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.perk {
+  font-size: 0.85rem;
+  color: var(--gray);
+  padding-left: 1rem;
+  border-left: 2px solid var(--teal);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ─── REVIEWS ─── */
+.reviews { background: var(--cream); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.review-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 2px;
+  border-top: 3px solid var(--teal);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+
+.review-stars {
+  color: var(--teal);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.review-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+
+.review-author {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.review-when {
+  font-size: 0.72rem;
+  color: #aaa;
+  font-weight: 300;
+  margin-top: 0.2rem;
+}
+
+.reviews-footer {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.rating-big {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.rating-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--teal-dark);
+  line-height: 1;
+}
+
+.rating-detail { display: flex; flex-direction: column; gap: 0.3rem; }
+.rating-stars { color: var(--teal); font-size: 1rem; letter-spacing: 0.05em; }
+.rating-count { font-size: 0.75rem; color: var(--gray); font-weight: 300; }
+
+.rating-bars { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 0.5rem; }
+.bar-row { display: flex; align-items: center; gap: 0.75rem; }
+.bar-lbl { font-size: 0.75rem; color: var(--gray); width: 22px; text-align: right; font-weight: 300; }
+.bar-track { flex: 1; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--teal); border-radius: 3px; }
+
+.btn-review {
+  background: var(--teal);
+  color: white;
+  padding: 0.85rem 2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.25s;
+  white-space: nowrap;
+}
+.btn-review:hover { background: var(--teal-dark); }
+
+/* ─── BOOKING ─── */
+.booking { background: var(--warm-white); }
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.booking-info-block {
+  background: var(--teal-dark);
+  color: white;
+  padding: 3rem 2.5rem;
+  border-radius: 2px;
+}
+
+.booking-info-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.booking-info-line {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  line-height: 2;
+  margin-bottom: 0.25rem;
+}
+
+.booking-info-line strong {
+  color: white;
+  font-weight: 400;
+}
+
+.booking-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 1.5rem 0;
+}
+
+.booking-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* form */
+.form-section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form-section-label:first-child { margin-top: 0; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+.form-row.single { grid-template-columns: 1fr; }
+
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 2px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text);
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  appearance: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--teal);
+}
+
+.field input::placeholder,
+.field textarea::placeholder { color: #bbb; }
+
+.field textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+
+.btn-submit {
+  width: 100%;
+  padding: 1.1rem;
+  background: var(--teal-dark);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+  margin-top: 1.5rem;
+}
+.btn-submit:hover { background: var(--teal); transform: translateY(-1px); }
+.btn-submit:disabled { background: #aaa; cursor: not-allowed; transform: none; }
+
+.submit-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-top: 0.75rem;
+  font-weight: 300;
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 2px;
+  border-top: 3px solid var(--teal);
+}
+
+.success-mark {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.4rem;
+}
+
+.form-success h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--teal-dark);
+  margin-bottom: 0.75rem;
+}
+
+.form-success p { font-size: 0.9rem; color: var(--gray); font-weight: 300; line-height: 1.8; }
+.form-success a { color: var(--teal-dark); font-weight: 700; }
+
+/* ─── CONTACT ─── */
+.contact { background: var(--cream); }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 3rem;
+}
+
+.contact-item { margin-bottom: 2rem; }
+
+.contact-item-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.contact-item-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.contact-item-value a { color: var(--teal-dark); }
+.contact-item-value a:hover { text-decoration: underline; }
+
+.contact-social { display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; }
+
+.social-btn {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  font-weight: 700;
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid var(--teal);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.social-btn:hover { background: var(--teal); color: white; }
+
+.map-embed {
+  background: var(--teal-light);
+  border-radius: 2px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid rgba(58,173,168,0.2);
+  text-align: center;
+  padding: 2rem;
+}
+
+.map-embed-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: var(--teal-dark);
+}
+
+.map-embed-addr {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.map-embed-link {
+  background: var(--teal-dark);
+  color: white;
+  padding: 0.65rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.map-embed-link:hover { background: var(--teal); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #1c2a2a;
+  color: rgba(255,255,255,0.5);
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-text { font-size: 0.75rem; font-weight: 300; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 5rem 1.5rem 3rem; }
+  .hero-right { display: none; }
+  .section { padding: 4rem 1.5rem; }
+  .services-layout { grid-template-columns: 1fr; }
+  .services-nav { flex-direction: row; flex-wrap: wrap; border-left: none; }
+  .svc-tab { border-left: none; border-bottom: 2px solid var(--border); padding: 0.6rem 1rem; }
+  .svc-tab.active { border-bottom-color: var(--teal); }
+  .about-layout, .booking-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .reviews-footer { flex-direction: column; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  .ribbon { gap: 1.5rem; padding: 0.9rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sophia's Nail Salon</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#booking" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-pretitle">Atlanta, Georgia · Since 2015</p>
+    <h1 class="hero-name">Sophia's<br>Nail Salon</h1>
+    <p class="hero-tagline">"Time to Treat Yourself"</p>
+    <div class="hero-details">
+      <strong>139 Ralph McGill Blvd NE, Suite 17 · Atlanta, GA 30308</strong><br>
+      Monday – Saturday &nbsp; 10AM – 10PM<br>
+      Sunday &nbsp; 11AM – 6PM<br>
+      (404) 388-9377
+    </div>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">Book an Appointment</a>
+      <a href="tel:4043889377" class="btn-secondary">Call Us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-big-script">S</div>
+    <div class="hero-badges">
+      <div class="hero-badge">
+        <div class="badge-num">Open Late</div>
+        <div class="badge-label">Until 10PM weekdays</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">$23</div>
+        <div class="badge-label">Acrylic Full Set</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">LGBTQ+</div>
+        <div class="badge-label">Friendly &amp; Welcoming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  <span class="ribbon-item">Nails</span>
+  <span class="ribbon-dot">·</span>
+  <span class="ribbon-item">Waxing</span>
+  <span class="ribbon-dot">·</span>
+  <span class="ribbon-item">Eyebrows</span>
+  <span class="ribbon-dot">·</span>
+  <span class="ribbon-item">Spa Services</span>
+  <span class="ribbon-dot">·</span>
+  <span class="ribbon-item">Eyelash Extensions</span>
+  <span class="ribbon-dot">·</span>
+  <span class="ribbon-item">Booths Available</span>
+</div>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="section-inner">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Services &amp; <em>Pricing</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-sub">All prices listed — no surprises, no guessing.</p>
+
+    <div class="services-layout">
+      <div class="services-nav">
+        <button class="svc-tab active" onclick="showTab('nails',this)">Nail Services</button>
+        <button class="svc-tab" onclick="showTab('spa',this)">Spa Services</button>
+        <button class="svc-tab" onclick="showTab('wax',this)">Waxing</button>
+        <button class="svc-tab" onclick="showTab('extras',this)">Add-ons &amp; More</button>
+      </div>
+
+      <div>
+        <div id="tab-nails" class="svc-panel active">
+          <div class="svc-panel-title">Nail Services</div>
+          <div class="price-row">
+            <div><div class="price-name">Acrylic</div><div class="price-note">Full set or fill in</div></div>
+            <div class="price-amount">$23 · $16</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Gel</div><div class="price-note">Full set or fill in</div></div>
+            <div class="price-amount">$35 · $25</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Pink &amp; White</div><div class="price-note">Full set</div></div>
+            <div class="price-amount">$45</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Manicure</div></div>
+            <div class="price-amount">$15</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Pedicure</div></div>
+            <div class="price-amount">$20</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Mani/Pedi — Men</div></div>
+            <div class="price-amount">$40</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Nail Soak Off</div></div>
+            <div class="price-amount">$15+</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Nail Repair</div></div>
+            <div class="price-amount">$5+</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Cut Down</div></div>
+            <div class="price-amount">$5</div>
+          </div>
+        </div>
+
+        <div id="tab-spa" class="svc-panel">
+          <div class="svc-panel-title">Spa Services</div>
+          <div class="price-row">
+            <div><div class="price-name">Facial</div></div>
+            <div class="price-amount">$50</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Spa Pedicure</div></div>
+            <div class="price-amount">$50</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Spa Manicure</div></div>
+            <div class="price-amount">$35</div>
+          </div>
+        </div>
+
+        <div id="tab-wax" class="svc-panel">
+          <div class="svc-panel-title">Waxing</div>
+          <div class="price-row">
+            <div><div class="price-name">Eyebrows</div></div>
+            <div class="price-amount">$7</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Chin</div></div>
+            <div class="price-amount">$6</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Lip</div></div>
+            <div class="price-amount">$6</div>
+          </div>
+        </div>
+
+        <div id="tab-extras" class="svc-panel">
+          <div class="svc-panel-title">Add-ons &amp; More</div>
+          <div class="price-row">
+            <div><div class="price-name">Nail Design</div></div>
+            <div class="price-amount">$3+</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Polish Change</div></div>
+            <div class="price-amount">$10+</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Gel Polish</div></div>
+            <div class="price-amount">$10</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Custom Gel Polish</div><div class="price-note">Choose any color</div></div>
+            <div class="price-amount">$15</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Eyelash Extensions</div></div>
+            <div class="price-amount">$30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="section-inner">
+    <div class="about-layout">
+      <div>
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">Your Neighborhood <em>Nail Spot</em></h2>
+        <div class="section-rule"></div>
+        <div class="about-body">
+          <p>Sophia's Nail Salon has been a staple of the Atlanta community — a place where everyone is welcome, prices are fair, and the work is done right.</p>
+          <p>We're open late every weeknight until 10PM, so you can always fit in an appointment after work or school. No rushing, no pressure.</p>
+          <p>We also have booths available for licensed nail technicians looking for a space to grow their clientele in a supportive environment.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">10PM</div>
+            <div class="stat-label">Open late weekdays</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">153+</div>
+            <div class="stat-label">Google reviews</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">$23</div>
+            <div class="stat-label">Acrylic full set</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">All</div>
+            <div class="stat-label">Are welcome here</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-quote">"Time to Treat Yourself"</div>
+        <div class="about-quote-attr">Sophia's Nail Salon · Atlanta</div>
+        <div class="about-perks">
+          <div class="perk">LGBTQ+ friendly — everyone welcome</div>
+          <div class="perk">Open until 10PM most nights</div>
+          <div class="perk">Walk-ins always accepted</div>
+          <div class="perk">Booth rentals available</div>
+          <div class="perk">Nails, waxing, spa &amp; more</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="section-inner">
+    <p class="section-label">Client Reviews</p>
+    <h2 class="section-title">What People <em>Are Saying</em></h2>
+    <div class="section-rule"></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-body">"This salon is open until 11PM! My experience with Kevin was amazing. Great service — 10/10, happy to have finally found a permanent salon."</p>
+        <div class="review-author">Kiara K. Havens</div>
+        <div class="review-when">3 months ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-body">"The service was great. Kevin did a fantastic job on my nails. I will definitely be going back."</p>
+        <div class="review-author">Britt</div>
+        <div class="review-when">1 month ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-body">"I had ingrown toenails at 9PM and Kevin answered and said yes, come in. Incredible care — I couldn't believe it. An absolute lifesaver."</p>
+        <div class="review-author">Andrea Hamm</div>
+        <div class="review-when">3 months ago</div>
+      </div>
+    </div>
+    <div class="reviews-footer">
+      <div class="rating-big">
+        <div class="rating-num">3.7</div>
+        <div class="rating-detail">
+          <div class="rating-stars">★★★★☆</div>
+          <div class="rating-count">153 reviews on Google</div>
+        </div>
+      </div>
+      <div class="rating-bars">
+        <div class="bar-row"><span class="bar-lbl">5</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">4</span><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">3</span><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">2</span><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">1</span><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div></div>
+      </div>
+      <a href="https://search.google.com/local/writereview?placeid=ChIJf7A7zC4E9YgRZHFujt8jkwM" target="_blank" class="btn-review">Leave a Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section booking" id="booking">
+  <div class="section-inner">
+    <p class="section-label">Appointments</p>
+    <h2 class="section-title">Book Your <em>Visit</em></h2>
+    <div class="section-rule"></div>
+    <div class="booking-layout">
+      <div class="booking-info-block">
+        <div class="booking-info-title">Sophia's</div>
+        <div class="booking-info-line"><strong>Address</strong><br>139 Ralph McGill Blvd NE<br>Suite 17, Atlanta GA 30308</div>
+        <hr class="booking-divider">
+        <div class="booking-info-line"><strong>Hours</strong><br>Mon – Sat: 10AM – 10PM<br>Sunday: 11AM – 6PM</div>
+        <hr class="booking-divider">
+        <div class="booking-info-line"><strong>Phone</strong><br>(404) 388-9377</div>
+        <hr class="booking-divider">
+        <div class="booking-note">"Walk-ins are always welcome — call ahead or fill out the form and we'll confirm your time."</div>
+      </div>
+
+      <div>
+        <form id="bookingForm" action="https://formspree.io/f/mnjlawrr" method="POST">
+          <p class="form-section-label">Your Information</p>
+          <div class="form-row">
+            <div class="field">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(404) 000-0000" required>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+
+          <p class="form-section-label">Appointment Details</p>
+          <div class="form-row single">
+            <div class="field">
+              <label>Select Services <span style ="font-weight:300;text-transform:none;letter-spacing:0;color:#aaa;">- pick all that apply </span></label>
+              <div class="service-checks">
+                <div class="check-group-label">Nail Services</div>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Acrylic Full Set — $23"><span>Acrylic Full Set — $23</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Acrylic Fill In — $16"><span>Acrylic Fill In — $16</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Gel Full Set — $35"><span>Gel Full Set — $35</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Gel Fill In — $25"><span>Gel Fill In — $25</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Pink & White — $45"><span>Pink &amp; White — $45</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Manicure — $15"><span>Manicure — $15</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Pedicure — $20"><span>Pedicure — $20</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Mani/Pedi Men — $40"><span>Mani/Pedi (Men) — $40</span></label>
+                <div class="check-group-label">Spa Services</div>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Spa Pedicure — $50"><span>Spa Pedicure — $50</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Spa Manicure — $35"><span>Spa Manicure — $35</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Facial — $50"><span>Facial — $50</span></label>
+                <div class="check-group-label">Waxing</div>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Eyebrow Wax — $7"><span>Eyebrow Wax — $7</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Lip Wax — $6"><span>Lip Wax — $6</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Chin Wax — $6"><span>Chin Wax — $6</span></label>
+                <div class="check-group-label">Add-ons</div>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Nail Design — $3+"><span>Nail Design — $3+</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Gel Polish — $10"><span>Gel Polish — $10</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Custom Gel Polish — $15"><span>Custom Gel Polish — $15</span></label>
+                <label class="check-item"><input type="checkbox" name="service[]" value="Eyelash Extensions — $30"><span>Eyelash Extensions — $30</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label>Preferred Date</label>
+              <input type="date" name="date" required>
+            </div>
+            <div class="field">
+              <label>Preferred Time</label>
+              <select name="time" required>
+                <option value="" disabled selected>Choose a time...</option>
+                <option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option>
+                <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
+                <option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
+                <option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label>Additional Notes</label>
+              <textarea name="message" placeholder="Special requests, nail inspiration, questions..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">Request Appointment</button>
+          <p class="submit-note">We'll call or text to confirm · Walk-ins always welcome</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-mark">✓</div>
+          <h3>Request Received!</h3>
+          <p>Thank you! We'll call or text you shortly to confirm your appointment.<br><br>
+          Questions? Call <a href="tel:4043889377">(404) 388-9377</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Find <em>Us</em></h2>
+    <div class="section-rule"></div>
+    <div class="contact-layout">
+      <div>
+        <div class="contact-item">
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-value">139 Ralph McGill Blvd NE, Suite 17<br>Atlanta, GA 30308</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-value"><a href="tel:4043889377">(404) 388-9377</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Hours</div>
+          <div class="contact-item-value">Monday – Saturday: 10AM – 10PM<br>Sunday: 11AM – 6PM</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Follow Us</div>
+          <div class="contact-social">
+            <a href="https://www.facebook.com/sophiasnailsalon866" target="_blank" class="social-btn">Facebook</a>
+            <a href="https://www.instagram.com/sophiasnailsalon866" target="_blank" class="social-btn">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-embed">
+          <div class="map-embed-name">Sophia's</div>
+          <div class="map-embed-addr">139 Ralph McGill Blvd NE, Suite 17<br>Atlanta, GA 30308</div>
+          <a href="https://maps.google.com/?q=139+Ralph+McGill+Blvd+NE+Suite+17+Atlanta+GA+30308" target="_blank" class="map-embed-link">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Sophia's Nail Salon</div>
+  <div class="footer-text">139 Ralph McGill Blvd NE, Ste 17 · Atlanta, GA 30308 · (404) 388-9377 · © 2025</div>
+</footer>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.svc-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+const form = document.getElementById('bookingForm');
+const successMsg = document.getElementById('formSuccess');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    } else {
+      submitBtn.textContent = 'Something went wrong — try again';
+      submitBtn.disabled = false;
+    }
+  } catch(err) {
+    submitBtn.textContent = 'Something went wrong — try again';
+    submitBtn.disabled = false;
+  }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
